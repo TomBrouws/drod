@@ -565,10 +565,10 @@ void CCharacter::setPredefinedVarInt(
 			this->nColor = val;
 		break;
 		case (UINT)ScriptVars::P_MONSTER_HUE:
-			this->nHue = max(0, min(val, MAX_HUE));
+			this->nHue = std::max<UINT>(0, std::min<UINT>(val, MAX_HUE));
 		break;
 		case (UINT)ScriptVars::P_MONSTER_SATURATION:
-			this->nSaturation = max(0, min(val, MAX_SATURATION));
+			this->nSaturation = std::max<UINT>(0, std::min<UINT>(val, MAX_SATURATION));
 		break;
 		//Room position.
 		case (UINT)ScriptVars::P_MONSTER_X:
@@ -3200,7 +3200,7 @@ void CCharacter::Process(
 				ScriptArrayMap& scriptArrays = pGame->pHold->IsLocalVar(varId) ?
 					this->localScriptArrays : pGame->scriptArrays;
 
-				ScriptArrayMap::iterator& array = scriptArrays.find(varId);
+				ScriptArrayMap::iterator array = scriptArrays.find(varId);
 				if (array != scriptArrays.end()) {
 					//Only clear a script array that is initialized
 					array->second.clear();
@@ -3872,7 +3872,7 @@ void CCharacter::Process(
 				bool bCeilingLightChanged = false;
 
 				//clamp pflag to lighting type range
-				pflags = max(0, min(pflags, NUM_DARK_TYPES));
+				pflags = max(0U, min(pflags, static_cast<UINT>(NUM_DARK_TYPES)));
 
 				if (pflags == 0) {
 					//Remove tile lights
@@ -3930,7 +3930,7 @@ void CCharacter::Process(
 			case CCharacterCommand::CC_SetWallLight: {
 				bProcessNextCommand = true;
 				getCommandParams(command, px, py, pw, ph, pflags);
-				pw = max(0, min(pw, MAX_LIGHT_DISTANCE));
+				pw = max(0U, min(pw, static_cast<UINT>(MAX_LIGHT_DISTANCE)));
 
 				if (!room.IsValidColRow(px, py) || !(bIsLightTileValue(pflags) || pflags == 0))
 					break;

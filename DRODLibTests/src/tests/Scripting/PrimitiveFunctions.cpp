@@ -1,6 +1,17 @@
 #include "../../test-include.hpp"
 #include "../../CAssert.h"
 
+// Custom to_wstring implementation for GCC 4.9 compatibility
+namespace compat {
+	template <typename T>
+	wstring to_wstring(T value) {
+		std::string str = std::to_string(value);
+		wstring wstr;
+		wstr.assign(str.begin(), str.end());
+		return wstr;
+	}
+}
+
 static void TestValidity(const wstring& expression, CDbHold* pHold, bool bValid = true) {
 	UINT index = 0;
 	CHECK(CCharacter::IsValidExpression(expression.c_str(), index, pHold) == bValid);
@@ -85,25 +96,25 @@ TEST_CASE("Scripting: Primitive Functions", "[game][scripting][functions]") {
 			}
 
 			TestParsedValue(
-				wstring(L"_rotateCW(") + std::to_wstring(wO) + wstring(L")"),
+				wstring(L"_rotateCW(") + compat::to_wstring(wO) + wstring(L")"),
 				nNextCO(wO),
 				pGame,
 				pCharacter
 			);
 			TestParsedValue(
-				wstring(L"_rotateCCW(") + std::to_wstring(wO) + wstring(L")"),
+				wstring(L"_rotateCCW(") + compat::to_wstring(wO) + wstring(L")"),
 				nNextCCO(wO),
 				pGame,
 				pCharacter
 			);
 			TestParsedValue(
-				wstring(L"_ox(") + std::to_wstring(wO) + wstring(L")"),
+				wstring(L"_ox(") + compat::to_wstring(wO) + wstring(L")"),
 				nGetOX(wO),
 				pGame,
 				pCharacter
 			);
 			TestParsedValue(
-				wstring(L"_oy(") + std::to_wstring(wO) + wstring(L")"),
+				wstring(L"_oy(") + compat::to_wstring(wO) + wstring(L")"),
 				nGetOY(wO),
 				pGame,
 				pCharacter

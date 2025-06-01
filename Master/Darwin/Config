@@ -127,7 +127,7 @@ INST_BIN_DIRS  = -m 0755
 INST_BIN_FILES = -m 0755
 
 # Convenience variable: Set to 'usr', 'local', 'one', or create your own set.
-INSTALL_TYPE = local
+INSTALL_TYPE = one
 
 BIN_usr = usr/games
 RES_usr = usr/share/games/drod

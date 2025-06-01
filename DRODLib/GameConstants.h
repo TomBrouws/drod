@@ -37,7 +37,7 @@
 #include "../Texts/MIDs.h"
 
 #include <SDL.h>
-#include <unordered_map>
+#include <map>
 
 //Global app parameters.
 extern const char szCompanyName[];
@@ -248,6 +248,7 @@ namespace InputCommands
 		DCMD_ToggleDemoRecord,
 		DCMD_WatchDemos,
 		DCMD_ShowHelp,
+
 		DCMD_Settings,
 		DCMD_ReloadStyle,
 		DCMD_LogVars,
@@ -281,13 +282,23 @@ namespace InputCommands
 		DCMD_ExtraKeys=DCMD_LockRoom
 	};
 	
-	extern const std::unordered_map<DCMD, KeyDefinition*> COMMAND_MAP;
+	extern const std::map<DCMD, KeyDefinition*> COMMAND_MAP;
 
 	extern DCMD getCommandIDByVarName(const WSTRING& wtext);
 	extern const KeyDefinition *GetKeyDefinition(const UINT nCommand);
 	extern const bool DoesCommandUseModifiers(const DCMD eCommand);
 
 	extern MESSAGE_ID KeyToMID(const SDL_Keycode nKey);
+}
+
+// Add a hash function specialization for InputCommands::DCMD
+namespace std {
+    template<>
+    struct hash<InputCommands::DCMD> {
+        size_t operator()(const InputCommands::DCMD& key) const {
+            return hash<int>()(static_cast<int>(key));
+        }
+    };
 }
 
 //******************************************************************************************

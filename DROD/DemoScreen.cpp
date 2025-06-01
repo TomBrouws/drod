@@ -114,8 +114,8 @@ CDemoScreen::CDemoScreen()
 	, bUniformTurnSpeed(false)
 //Constructor.
 {
-	static const INT HELP_DIALOG_W = 800;
-	static const INT HELP_DIALOG_H = 600;
+	static const UINT HELP_DIALOG_W = 800;
+	static const UINT HELP_DIALOG_H = 600;
 
 	{
 		CHtmlDialogWidget *pHtmlDialogWidget = new CHtmlDialogWidget(TAG_HELPDIALOG, HELP_DIALOG_W, HELP_DIALOG_H);
@@ -183,7 +183,8 @@ bool CDemoScreen::SetForActivate()
 
 	this->bBeforeFirstTurn = true;
 
-	InitKeysymToCommandMap(g_pTheDB->GetCurrentPlayerSettings());
+	CDbPackedVars playerSettings = g_pTheDB->GetCurrentPlayerSettings();
+	InitKeysymToCommandMap(playerSettings);
 
 	return true;
 }
@@ -237,7 +238,7 @@ void CDemoScreen::OnKeyDown(
 
 	// The longer forward/backwards key is pressed the faster frames should pass
 	UINT wMovesToDo = static_cast<UINT>(max(
-		1,
+		1.0,
 		ceil(GetKeyRepeatDuration() / NAVIGATION_SPEED_INCREASE)
 	));
 

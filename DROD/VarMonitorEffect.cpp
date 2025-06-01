@@ -143,7 +143,9 @@ void CVarMonitorEffect::SetTextForNewTurn()
 			newText += wszSpace;
 			newText += wszEqual;
 			newText += wszSpace;
-			newText += to_wstring(value);
+			WCHAR temp1[32];
+			_itoW(value, temp1, 10, 32);
+			newText += temp1;
 
 			newText += wszCRLF;
 		}

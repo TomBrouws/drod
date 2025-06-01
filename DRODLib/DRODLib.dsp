@@ -354,6 +354,14 @@ SOURCE=.\HoldRecords.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\I18N.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\I18N.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\ImportInfo.cpp
 # End Source File
 # Begin Source File

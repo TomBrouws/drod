@@ -141,11 +141,35 @@ SOURCE=.\Chat.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\CommandListBoxWidget.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\CommandListBoxWidget.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DottedLineEffect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\DottedLineEffect.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\DrodBitmapManager.cpp
 # End Source File
 # Begin Source File
 
 SOURCE=.\DrodBitmapManager.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DrodDialogs.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\DrodDialogs.h
 # End Source File
 # Begin Source File
 
@@ -177,7 +201,19 @@ SOURCE=.\DrodWidget.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\KeypressDialogWidget.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\KeypressDialogWidget.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\Main.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Resource.h
 # End Source File
 # Begin Source File
 
@@ -190,6 +226,15 @@ SOURCE=.\TileImageCalcs.h
 # Begin Source File
 
 SOURCE=.\TileImageConstants.h
+
+# End Source File
+# Begin Source File
+
+SOURCE=.\TileSwirlEffect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\TileSwirlEffect.h
 # End Source File
 # End Group
 # Begin Group "Screens"
@@ -363,11 +408,11 @@ SOURCE=.\WinStartScreen.cpp
 
 SOURCE=.\WinStartScreen.h
 # End Source File
-# End Group
+# Begin Source File
 
 SOURCE=.\WorldMapScreen.cpp
 # End Source File
-# End Group
+# Begin Source File
 
 SOURCE=.\WorldMapScreen.h
 # End Source File
@@ -433,11 +478,27 @@ SOURCE=.\FaceWidget.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\HtmlDialogWidget.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\HtmlDialogWidget.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\MapWidget.cpp
 # End Source File
 # Begin Source File
 
 SOURCE=.\MapWidget.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\PuzzleModeOptionsDialogWidget.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\PuzzleModeOptionsDialogWidget.h
 # End Source File
 # Begin Source File
 
@@ -449,13 +510,21 @@ SOURCE=.\RoomWidget.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\SelectMediaDialogWidget.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\SelectMediaDialogWidget.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\WeatherDialogWidget.cpp
 # End Source File
 # Begin Source File
 
 SOURCE=.\WeatherDialogWidget.h
 # End Source File
-# End Group
+# Begin Source File
 
 SOURCE=.\WorldMapWidget.cpp
 # End Source File
@@ -463,7 +532,7 @@ SOURCE=.\WorldMapWidget.cpp
 
 SOURCE=.\WorldMapWidget.h
 # End Source File
-# Begin Source File
+# End Group
 # Begin Group "Effects"
 
 # PROP Default_Filter ""
@@ -550,6 +619,14 @@ SOURCE=.\ImageOverlayEffect.cpp
 # Begin Source File
 
 SOURCE=.\ImageOverlayEffect.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\MovementOrderHintEffect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\MovementOrderHintEffect.h
 # End Source File
 # Begin Source File
 
@@ -673,6 +750,14 @@ SOURCE=.\StunEffect.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\SwirlEffect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\SwirlEffect.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\SwordsmanSwirlEffect.cpp
 # End Source File
 # Begin Source File
@@ -782,6 +867,10 @@ SOURCE=.\Point.cpp
 # Begin Source File
 
 SOURCE=.\Point.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\PuzzleModeOptions.h
 # End Source File
 # Begin Source File
 

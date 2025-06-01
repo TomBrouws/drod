@@ -1194,7 +1194,8 @@ WSTRING CDemosScreen::GetSelectedDemosDescription(
 	descText += wszSpace;
 
 	//Append total number of demos
-	descText += std::to_wstring(demoIDs.size());
+	WCHAR dummy[20];
+	descText += _itoW(demoIDs.size(), dummy, 10);
 	descText += wszSpace;
 	descText += g_pTheDB->GetMessageText(MID_Demos);
 

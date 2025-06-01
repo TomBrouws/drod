@@ -1976,7 +1976,7 @@ void CDrodScreen::ExportSaves(
 		CDbHold* pHold = g_pTheDB->Holds.GetByID(holdID);
 		if (pHold)
 		{
-			WSTRING holdName = pHold->NameText;
+			WSTRING holdName = static_cast<const WCHAR*>(pHold->NameText);
 			static const UINT MAX_HOLD_NAME = 16;
 			if (holdName.size() <= MAX_HOLD_NAME)
 			{
@@ -2155,7 +2155,7 @@ MESSAGE_ID CDrodScreen::ImportFiles(
 
 	//Each iteration processes one file.
 	MESSAGE_ID result = MID_NoText;
-	CImportInfo::ImportType type = CImportInfo::None;
+	CImportInfo::ImportType type = CImportInfo::ImportType_None;
 	for (vector<WSTRING>::const_iterator wFilename = wstrImportFiles.begin();
 			wFilename != wstrImportFiles.end(); ++wFilename)
 	{

@@ -60,9 +60,9 @@ const WCHAR wszVersionReleaseNumber[] = {
 //Schema of player input commands
 namespace InputCommands
 {
-	const std::unordered_map<DCMD, KeyDefinition*> BuildKeyDefinitions()
+	const std::map<DCMD, KeyDefinition*> BuildKeyDefinitions()
 	{
-		std::unordered_map<DCMD, KeyDefinition*> keyDefinitions;
+		std::map<DCMD, KeyDefinition*> keyDefinitions;
 		
 		keyDefinitions[DCMD_NW] = new KeyDefinition(CMD_NW, "MoveNorthwest", MID_MoveNorthwest, SDLK_KP_7, SDLK_7);
 		keyDefinitions[DCMD_N] = new KeyDefinition(CMD_N, "MoveNorth", MID_MoveNorth, SDLK_KP_8, SDLK_8);
@@ -132,7 +132,7 @@ namespace InputCommands
 		return keyDefinitions;
 	}
 
-	const std::unordered_map<DCMD, KeyDefinition *> COMMAND_MAP = BuildKeyDefinitions();
+	const std::map<DCMD, KeyDefinition *> COMMAND_MAP = BuildKeyDefinitions();
 
 	const KeyDefinition *GetKeyDefinition(const UINT nCommand) {
 		ASSERT(nCommand < DCMD_Count);

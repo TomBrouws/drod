@@ -206,6 +206,14 @@ SOURCE=.\IniFile.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\InputKey.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\InputKey.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\Internet.cpp
 # End Source File
 # Begin Source File

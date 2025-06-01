@@ -254,14 +254,6 @@ SOURCE=.\Inset.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\KeypressDialogWidget.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\KeypressDialogWidget.h
-# End Source File
-# Begin Source File
-
 SOURCE=.\LabelWidget.cpp
 # End Source File
 # Begin Source File

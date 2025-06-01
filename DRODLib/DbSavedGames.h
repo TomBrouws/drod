@@ -35,6 +35,7 @@
 #include "DbCommands.h"
 #include "DbPackedVars.h"
 #include "ImportInfo.h"
+#include "Swordsman.h"
 #include <BackEndLib/Date.h>
 #include <BackEndLib/IDSet.h>
 

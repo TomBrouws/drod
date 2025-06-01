@@ -344,7 +344,7 @@ CRestoreScreen::CRestoreScreen()
 
 	this->pChallengesCountLabel = new CLabelWidget(0, CX_SPACE, Y_CHALLENGES_OKAY,
 		CX_CHALLENGES_DIALOG - 2 * CX_SPACE, CY_CHALLENGES_TITLE,
-		FONTLIB::F_Message, L"(0/0)");
+		FONTLIB::F_Message, u"(0/0)");
 	this->pChallengesCountLabel->SetAlign(CLabelWidget::TA_CenterGroup);
 	this->pChallengesDialog->AddWidget(this->pChallengesCountLabel);
 
@@ -1170,9 +1170,12 @@ void CRestoreScreen::PopulateChallenges(
 
 	// Count of challenges
 	WSTRING countString = wszLeftParen;
-	countString += std::to_wstring(this->completedChallenges.size());
+	WCHAR temp[32];
+	_itoW(this->completedChallenges.size(), temp, 10);
+	countString += temp;
 	countString += wszForwardSlash;
-	countString += std::to_wstring(this->challengeVarMap.size());
+	_itoW(this->challengeVarMap.size(), temp, 10);
+	countString += temp;
 	countString += wszRightParen;
 	pLabelWidget->SetText(countString.c_str());
 }
